@@ -1,0 +1,411 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "markdownMFAContent": {
+            "type": "string"
+        },
+        "dashboardName": {
+            "type": "string"
+        },
+        "dashboardTitle": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+{
+    "properties": {
+        "lenses": {
+            "0": {
+                "order": 0,
+                "parts": {
+                    "0": {
+                        "position": {
+                            "x": 0,
+                            "y": 0,
+                            "rowSpan": 2,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/OrganizationIdentityPart"
+                        }
+                    },
+                    "1": {
+                        "position": {
+                            "x": 4,
+                            "y": 0,
+                            "rowSpan": 1,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/ADConnectStatusPart"
+                        }
+                    },
+                    "2": {
+                        "position": {
+                            "x": 6,
+                            "y": 0,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/ActiveDirectoryQuickTasksPart"
+                        }
+                    },
+                    "3": {
+                        "position": {
+                            "x": 8,
+                            "y": 0,
+                            "rowSpan": 2,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [
+                                {
+                                    "name": "userObjectId",
+                                    "isOptional": true
+                                },
+                                {
+                                    "name": "startDate",
+                                    "isOptional": true
+                                },
+                                {
+                                    "name": "endDate",
+                                    "isOptional": true
+                                },
+                                {
+                                    "name": "fromAppsTile",
+                                    "isOptional": true
+                                }
+                            ],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/UsersActivitySummaryReportPart"
+                        }
+                    },
+                    "4": {
+                        "position": {
+                            "x": 12,
+                            "y": 0,
+                            "rowSpan": 2,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Azure_ADHybridHealth/Blade/HybridHealthBlade/Lens/AADSyncCollectionsLens/PartInstance/AadSyncEntryPart"
+                        }
+                    },
+                    "5": {
+                        "position": {
+                            "x": 16,
+                            "y": 0,
+                            "rowSpan": 8,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/HubsExtension/PartType/MarkdownPart",
+                            "settings": {
+                                "content": {
+                                    "settings": {
+                                        "content": "[parameters('markdownMFAContent')]",
+                                        "title": "Azure MFA Registration",
+                                        "subtitle": "Current Status for User MFA Registrations"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "6": {
+                        "position": {
+                            "x": 4,
+                            "y": 1,
+                            "rowSpan": 1,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/AuditEventsDashboardPart"
+                        }
+                    },
+                    "7": {
+                        "position": {
+                            "x": 0,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_AAD_IAM/PartType/ActiveDirectoryPart",
+                            "defaultMenuItemId": "Overview"
+                        }
+                    },
+                    "8": {
+                        "position": {
+                            "x": 2,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [
+                                {
+                                    "name": "tenantId",
+                                    "isOptional": true
+                                },
+                                {
+                                    "name": "tenantName",
+                                    "isOptional": true
+                                },
+                                {
+                                    "name": "deployment",
+                                    "isOptional": true
+                                }
+                            ],
+                            "type": "Extension/Microsoft_Azure_ADHybridHealth/PartType/HybridHealthBladePinnedPart"
+                        }
+                    },
+                    "9": {
+                        "position": {
+                            "x": 4,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_AAD_ProtectionCenter/PartType/InferredBladePinPartIdentitySecurityDashboardBlade",
+                            "defaultMenuItemId": "Overview"
+                        }
+                    },
+                    "10": {
+                        "position": {
+                            "x": 6,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [
+                                {
+                                    "name": "inferredBladePinPartInputs.providerId",
+                                    "isOptional": true
+                                }
+                            ],
+                            "type": "Extension/Microsoft_Azure_PIM/PartType/InferredBladePinPartCommonMenuBlade",
+                            "defaultMenuItemId": "QuickStart"
+                        }
+                    },
+                    "11": {
+                        "position": {
+                            "x": 8,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_DeviceSettings/PartType/InferredBladePinPartExtensionLandingBlade",
+                            "defaultMenuItemId": "overview"
+                        }
+                    },
+                    "12": {
+                        "position": {
+                            "x": 10,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Azure_InformationProtection/PartType/InferredBladePinPartDataClassGroupEditBlade",
+                            "defaultMenuItemId": "globalBlade"
+                        }
+                    },
+                    "13": {
+                        "position": {
+                            "x": 12,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_AAD_IAM/PartType/InferredBladePinPartAppProxyOverviewBlade"
+                        }
+                    },
+                    "14": {
+                        "position": {
+                            "x": 14,
+                            "y": 2,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension[azure]/Microsoft_AAD_IAM/PartType/UserManagementSummaryPart"
+                        }
+                    },
+                    "15": {
+                        "position": {
+                            "x": 0,
+                            "y": 4,
+                            "rowSpan": 4,
+                            "colSpan": 6
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_Devices/Blade/DeviceEntryOverviewBlade/Lens/DeviceEntryOverviewLens/PartInstance/DonutOSPart"
+                        }
+                    },
+                    "16": {
+                        "position": {
+                            "x": 6,
+                            "y": 4,
+                            "rowSpan": 4,
+                            "colSpan": 6
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_DeviceSettings/PartType/ComplianceOverviewDonutTile"
+                        }
+                    },
+                    "17": {
+                        "position": {
+                            "x": 12,
+                            "y": 4,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/WipeRequestSummaryPart"
+                        }
+                    },
+                    "18": {
+                        "position": {
+                            "x": 14,
+                            "y": 4,
+                            "rowSpan": 1,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_DeviceSettings/PartType/AssignmentErrorCounter"
+                        }
+                    },
+                    "19": {
+                        "position": {
+                            "x": 14,
+                            "y": 5,
+                            "rowSpan": 1,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_DeviceSettings/PartType/AssignmentFailureCounter"
+                        }
+                    },
+                    "20": {
+                        "position": {
+                            "x": 12,
+                            "y": 6,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune_DeviceSettings/PartType/SecureByDefaultCounter"
+                        }
+                    },
+                    "21": {
+                        "position": {
+                            "x": 14,
+                            "y": 6,
+                            "rowSpan": 2,
+                            "colSpan": 2
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/GraphFlaggedUsersPart"
+                        }
+                    },
+                    "22": {
+                        "position": {
+                            "x": 0,
+                            "y": 8,
+                            "rowSpan": 4,
+                            "colSpan": 6
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/UserCountsIosPart"
+                        }
+                    },
+                    "23": {
+                        "position": {
+                            "x": 6,
+                            "y": 8,
+                            "rowSpan": 2,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/TargetediOSUserPartGraphViewModel"
+                        }
+                    },
+                    "24": {
+                        "position": {
+                            "x": 10,
+                            "y": 8,
+                            "rowSpan": 4,
+                            "colSpan": 6
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/UserCountsAndroidPart"
+                        }
+                    },
+                    "25": {
+                        "position": {
+                            "x": 6,
+                            "y": 10,
+                            "rowSpan": 2,
+                            "colSpan": 4
+                        },
+                        "metadata": {
+                            "inputs": [],
+                            "type": "Extension/Microsoft_Intune/Blade/SummaryBladeInternal/Lens/SummaryLens/PartInstance/TargetedAndroidUserPartGraphViewModel"
+                        }
+                    }
+                }
+            }
+        },
+        "metadata": {
+            "model": {
+                "timeRange": {
+                    "value": {
+                        "relative": {
+                            "duration": 24,
+                            "timeUnit": 1
+                        }
+                    },
+                    "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+                }
+            }
+        }
+    },
+    "metadata": { },
+    "apiVersion": "2015-08-01-preview",
+    "name": "[parameters('dashboardName')]",
+    "type": "Microsoft.Portal/dashboards",
+    "location": "[resourceGroup().location]",
+    "tags": {
+        "hidden-title": "[parameters('dashboardTitle')]"
+            }
+        }
+    ]
+}
